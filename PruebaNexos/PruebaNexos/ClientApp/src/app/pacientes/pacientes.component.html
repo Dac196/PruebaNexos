@@ -1,0 +1,77 @@
+<form>
+  <div class="form-row">
+    <h1 >Formulario Pacientes</h1>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>ID</label>
+      <input type="number" class="form-control" placeholder="ID" [formControl]="id" />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Nombre</label>
+      <input type="text" class="form-control" placeholder="Nombre" [formControl]="nombreControl" />
+    </div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Seguro Social</label>
+      <input type="number" class="form-control" placeholder="# Seguro Social" [formControl]="numSegSocialControl" />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Codigo Postal</label>
+      <input type="number" class="form-control" placeholder="Codigo Postal" [formControl]="codPostalControl" />
+
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+
+      <label>Telefono</label>
+      <input type="number" class="form-control" placeholder="Telefono" [formControl]="telefonoControl" />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Identificacion Doctor</label>
+      <input type="text" class="form-control" placeholder="Identificacion Doctor" [formControl]="cedDoctorControl" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <button type="button" class="btn btn-primary" (click)="Registrar()">Registrar</button>
+    </div>
+    <div class="form-group col-md-4">
+      <button type="button" class="btn btn-primary" (click)="Modificar()">Modificar</button>
+    </div>
+    <div class="form-group col-md-4">
+      <button type="button" class="btn btn-primary" (click)="Eliminar()">Eliminar</button>
+    </div>
+
+  </div>
+</form>
+
+<br />
+<br />
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombret</th>
+      <th scope="col"># Seguro Social</th>
+      <th scope="col">Codigo Postal</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Doctor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let paciente of lstpaciente | async">
+      <td>{{paciente.id}}</td>
+      <td>{{paciente.nombre}}</td>
+      <td>{{paciente.numeroDeSeguroSocial}}</td>
+      <td>{{paciente.codigoPostal}}</td>
+      <td>{{paciente.telefono}}</td>
+      <td>{{paciente.cedulaDoctor}}</td>
+    </tr>
+  </tbody>
+</table>

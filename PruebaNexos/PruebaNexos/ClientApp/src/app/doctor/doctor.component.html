@@ -1,0 +1,19 @@
+<h1>Lista Doctores</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Numero Credencial</th>
+      <th scope="col">Hospital</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of lstdoctores | async">
+      <td>{{doctor.id}}</td>
+      <td>{{doctor.nombre}}</td>
+      <td>{{doctor.numeroDeCredencial}}</td>
+      <td>{{doctor.hospital}}</td>
+    </tr>
+  </tbody>
+</table>
